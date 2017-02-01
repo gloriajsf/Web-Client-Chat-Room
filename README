@@ -14,7 +14,7 @@ Requirement for running the application
 
 Configure
 -import the project to Dynamic Web Project running on Glassfish 4.1.1 Server
--Creat database demo and two tables chat_log and log
+-Create database demo and two tables chat_log and log
 	*chat_log records all messages ever sent
 	*log records all login and logout event acted by chat room users
 
