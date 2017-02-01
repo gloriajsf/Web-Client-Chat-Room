@@ -1,2 +1,38 @@
 # Web-Client-Chat-Room
 Java web application for group chat
+
+
+Websocket java chat room project
+	This app implements an online chat room, with web client and MySql database as data store
+	It supports features like
+		*login user 		first message sent will be taken as username
+		*send message 		send message to the chat room where every logged in user can see
+		*fetch message 		get previous messages from database, either all messages since viewer's first
+							login or all messages in database
+
+Requirement for running the application
+-Java EE 7
+-Glassfish 4.1.1
+-MySql 5.6
+-Eclipse Kepler
+
+Configure
+-import the project to Dynamic Web Project running on Glassfish 4.1.1 Server
+-Create database demo and two tables chat_log and log
+	*chat_log records all messages ever sent
+	*log records all login and logout event acted by chat room users
+
+-Download and add Mysql java connector mysql-connector-java-5.1.39-bin.jar to Java Build Path 
+-Import file log_tables.sql in the project folder
+-Run client default.html on Glassfish server
+-Open up as many browsers and open http://localhost:8080/testchat3/default.html
+
+
+Testing Suggestion
+-Online users column: type in different names as first messages to send, all users name show up at right
+-No duplicated name: use an existing name to login, receives warning that name is not valid
+-Recent chat history column: All logged in users can see the broadcasted messages from others
+-User name removal: Online users column is updated when browser is refreshed or closed
+-Load all messges: this load messages after the viewer's first login
+-Load all unread messages: If it's the users first login, show messages since viewer's first login
+						   If the user has logged out before, show messages after last log out, before last log in
